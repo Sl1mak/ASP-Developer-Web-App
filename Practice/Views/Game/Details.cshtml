@@ -1,0 +1,26 @@
+﻿@model Game
+
+@{
+	ViewData["Title"] = "Game";
+	Layout = "_Layout";
+}
+
+<head>
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<div class="main-div">
+	<div class="details-main-div">
+		<div class="details-img-div">
+			<img class="details-img" src="@Model.ImageURL" alt="@Model.Title" , width="800" />
+		</div>
+		<div class="details-des-div">
+			<h1 class="details-name">@Model.Title</h1> <!-- Название игры -->
+			<p class="details-des">@Model.Description</p> <!-- Описание -->
+		</div>
+	</div>
+	<div class="details-rate">
+		<h1 class="details-rate-text">@Model.Rating</h1>
+		<img class="details-rate-img" src="~/images/star.png" width="40" height="40"/>
+	</div>
+</div>

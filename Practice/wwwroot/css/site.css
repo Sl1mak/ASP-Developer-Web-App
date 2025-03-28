@@ -1,0 +1,344 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@font-face {
+    font-family: 'Tektur';
+    src: url('/fonts/Tektur-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin: auto;
+    margin-bottom: 60px;
+    font-family: Tektur, Tektur; 
+}
+
+header {
+    height: 75px;
+    width: 100%;
+    margin: auto;
+    background-color: #5B0055;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0px;
+    color: white;
+    font-weight: 400;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    margin: 0px;
+    color: white;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.navbar-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-item-text {
+    font-size: 30px;
+}
+
+.navbar-brand {
+    margin-left: 52px;
+    margin-right: 52px;
+}
+
+.nav-box {
+    width: 250px;
+    height: 75px;
+    background-color: #43003E;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-box-left {
+    left: 0px;
+}
+
+.nav-box-right {
+    right: 0px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1F1F1F;
+    height: 60px;
+}
+
+.footer-text {
+    color: white;
+}
+
+.border-top {
+    border-top: 0px;
+}
+
+.main-div {
+    background-color: #240022;
+    height: 800px;
+}
+
+.popular-games-text-div {
+    height: 125px;
+    margin-bottom: 46px;
+    display: flex;
+    justify-content: center;
+}
+
+.popular-games-text {
+    padding-top: 46px;
+    font-size: 64px;
+}
+
+.popular-games-baners {
+    margin-right: 25px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular-game-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-img {
+    width: 594px;
+    height: 355px;
+    border-radius: 20px;
+}
+
+.banner-name {
+    height: 60px;
+    font-size: 48px;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.banner-des {
+    width: 594px;
+    margin: 0px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.coop {
+    height: 800px;
+    background-color: black;
+}
+
+.main-coop-div {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-coop-text {
+    font-size: 64px;
+}
+
+.coop-des {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 66px;
+    width: 1200px;
+}
+
+.letter-button-container {
+    position: relative; /* Чтобы текст позиционировался внутри */
+    margin-top: 230px;
+    display: inline-block; /* Чтобы контейнер был по размеру картинки */
+}
+
+.letter-button {
+    display: block; /* Убираем возможные лишние отступы */
+    width: 100%; /* Оставляем, если нужно */
+}
+
+.letter-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Идеальное центрирование */
+    color: white; /* Или другой цвет, если фон светлый */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none; /* Чтобы текст не мешал нажатию */
+}
+
+.details-main-div {
+    display: flex;
+    padding: 50px;
+    padding-bottom: 20px;
+}
+
+.details-des-div {
+    padding-left: 50px;
+}
+
+.details-name {
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+.details-des {
+    font-size: 25px;
+}
+
+.details-img {
+    border-radius: 20px;
+}
+
+.details-rate {
+    display: flex;
+    align-items:center;
+    padding-left: 60px;
+}
+
+.details-rate-img {
+    padding-left: 10px;
+}
+
+.game-catalog-div {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.letter-main-div {
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.letter-main-text {
+    font-size: 48px;
+    padding-bottom: 20px;
+}
+
+.letter-input {
+    width: 1800px;
+    height: 400px;
+    font-size: 20px;
+    background: #ccc;
+    text-align: left;
+    vertical-align: top;
+}
+
+.send-letter-button-div {
+    display:flex;
+    justify-content:center;
+    margin-top: 60px;
+    position: relative;
+}
+
+.send-letter-success {
+    font-size: 30px;
+}
+
+.send-letter-button-img {
+    display: block; /* Убираем возможные лишние отступы */
+    width: 100%; /* Оставляем, если нужно */
+    cursor: pointer;
+}
+
+.send-letter-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Идеальное центрирование */
+    color: white; /* Или другой цвет, если фон светлый */
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none; /* Чтобы текст не мешал нажатию */
+}
+
+.profile-main-div {
+    width: 100%;
+    margin: auto;
+    background-color: #240022;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 800px;
+}
+
+.profile-reg-div {
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inputs-div {
+    padding-top: 20px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    width: 90%;
+}
+
+.input-name {
+    font-size: 30px;
+}
+
+.profile-reg-text {
+    font-size: 40px;
+}
+
+.input-textarea {
+    font-size: 20px;
+    height: 27px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.author-button-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}

@@ -1,0 +1,51 @@
+﻿@page
+@model Practice.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="main-div">
+    <div class="popular-games-text-div">
+        <h1 class="popular-games-text">ПОПУЛЯРНЫЕ ИГРЫ</h1>
+    </div>
+    <div class="popular-games-baners">
+        <div class="popular-game-banner">
+            <a href="/Game/Details/1">
+                <img class="banner-img" src="~/images//banner_etg.jpg" />
+            </a>
+            <p class="banner-name">Enter the Gunageon</p>
+            <p class="banner-des">Enter the Gungeon — это экшен с элементами roguelike, в котором игроки исследуют подземелья, стреляют, уворачиваются и грабят. Ты играешь за неудачников, которые пытаются найти легендарное оружие, способное уничтожить любое прошлое. В этой динамичной игре много оружия, необычных врагов и сложных уровней.</p>
+        </div>
+        <div class="popular-game-banner">
+            <a href="/Game/Details/2">
+                <img class="banner-img" src="~/images//banner_katanaZero.jpg" />
+            </a>
+            <p class="banner-name">Katana Zero</p>
+            <p class="banner-des">Katana Zero — это неонуарный экшен-платформер с мгновенной смертью, в котором ты играешь за самурая, сражающегося с преступными группировками. Игра предлагает уникальную боевую систему, где важно быстро реагировать, блокировать пули и перехитрить врагов. Ты управляешь временем и разгадываешь тайны своего прошлого, что делает геймплей необычайно захватывающим.</p>
+        </div>
+        <div class="popular-game-banner">
+            <a href="/Game/Details/3">
+                <img class="banner-img" src="~/images//banner_terraria.jpg" />
+            </a>
+            <p class="banner-name">Terraria</p>
+            <p class="banner-des">Terraria — это приключенческая песочница, в которой игроки могут исследовать, строить и сражаться. В мире игры все построено из блоков, и каждый биом предлагает уникальные ресурсы и врагов. Копай, строй, создай оружие и сразись с боссами. В этой игре нет границ для творчества: ты можешь создавать и разрушать все, что тебе нужно для выживания и приключений.</p>
+        </div>
+    </div>
+</div>
+
+<div class="coop">
+    <div class="main-coop-div">
+        <p class="main-coop-text"> Мы можем издать именно твою игру!</p>
+        <div class="coop-des">
+            <p>Если вы ищете надёжного партнёра для издания ваших игр, мы готовы к сотрудничеству. Мы ценим креативные идеи, нестандартные механики и проекты с потенциалом. Наша команда поможет вывести вашу игру на новый уровень, обеспечив поддержку на всех этапах — от продвижения до выхода на рынок.</p>
+            <p>Напишите нам, и давайте обсудим, как вместе сделать вашу игру успешной. Мы открыты к диалогу и готовы рассмотреть любые предложения. Ждём вашего письма!</p>
+        </div>
+        <div class="letter-button-container">
+            <a class="letter-button" asp-area="" asp-page="/Letter">
+                <img src="~/images/button.svg" asp-append-version="true" alt="Button" />
+            </a>
+            <p class="letter-overlay-text">Написать заявку</p>
+        </div>
+    </div>
+</div>

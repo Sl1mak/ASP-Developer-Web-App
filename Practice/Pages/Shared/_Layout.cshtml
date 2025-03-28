@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Practice</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Practice.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow">
+            <div class="navbar-items">
+                <div class="nav-box nav-box-left">
+                    <a asp-page="/Letter">
+                        <img src="~/images/mail.svg" , asp-append-version="true" alt="Mail" width="48">
+                    </a>
+                </div>
+                <a class="navbar-item-text" asp-page="/GamesCatalog">Каталог игр</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <img src="~/images/logo.png" asp-append-version="true" alt="Logo" width="100" />
+                </a>
+                <a class="navbar-item-text" asp-page="/DevCatalog">Разработчики</a>
+                <div class="nav-box nav-box-right">
+                    <a asp-page="/Profile">
+                        <img src="~/images/user.svg" , asp-append-version="true" alt="Mail" width="48">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <h3 class="footer-text">Все права защищены</h3>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

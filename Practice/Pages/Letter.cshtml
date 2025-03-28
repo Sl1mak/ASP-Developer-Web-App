@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Letter";
+}
+
+<div class="main-div">
+    <div class="letter-main-div">
+        <p class="letter-main-text">Заявка на сотрудничество</p>
+
+        <textarea id="letter-input" class="letter-input" name="Letter" placeholder="Нажмите, чтобы печатать..."></textarea>
+        <p class="send-letter-success" id="letter-text" style="display: none;">Ваша заявка отправлена</p>
+
+        <div id="send-button" class="send-letter-button-div">
+            <a id="send-button">
+                <img class="send-letter-button-img" src="~/images/button.svg" />
+                <p class="send-letter-text-overlay">Отправить заявку</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("send-button").addEventListener("click", function () {
+        document.getElementById("letter-input").style.display = "none"; // Прячем textarea
+        document.getElementById("send-button").style.display = "none";
+        document.getElementById("letter-text").style.display = "block"; // Показываем текст
+    });
+</script>
+

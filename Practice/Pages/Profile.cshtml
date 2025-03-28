@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="profile-main-div">
+    <div class="profile-reg-div">
+        <p class="profile-reg-text">Профиль</p>
+    </div>
+    <div class="inputs-div">
+        <p class="profile-reg-text">Имя</p>
+        <textarea class="input-textarea"></textarea>
+        <p class="profile-reg-text">Фамилия</p>
+        <textarea class="input-textarea"></textarea>
+        <p class="profile-reg-text">Почта</p>
+        <textarea class="input-textarea"></textarea>
+        <p class="profile-reg-text">Логин</p>
+        <textarea class="input-textarea"></textarea>
+        <p class="profile-reg-text">Пароль</p>
+        <textarea class="input-textarea"></textarea>
+    </div>
+    <div id="send-button" class="author-button-div">
+        <a id="send-button">
+            <img class="send-letter-button-img" src="~/images/button.svg" />
+            <p class="send-letter-text-overlay">Отправить заявку</p>
+        </a>
+    </div>
+</div>
