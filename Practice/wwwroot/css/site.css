@@ -342,3 +342,51 @@ p {
     margin-top: 20px;
     position: relative;
 }
+
+.reg-info {
+    font-size: 30px;
+}
+
+.dev-main-div {
+    width: 100%;
+    margin: auto;
+    background-color: #240022;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 800px;
+}
+
+.dev-img-div {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dev-img {
+    width: 300px;
+}
+
+.dev-text-button-div {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.dev-text-div {
+    width: 50%;
+}
+
+.dev-button-div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dev-text {
+    font-size: 30px;
+    text-align: justify;
+}

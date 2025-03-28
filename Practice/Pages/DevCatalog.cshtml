@@ -4,7 +4,29 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">Каталог разработчиков</a>.</p>
+<div class="dev-main-div">
+    <div class="dev-img-div">
+        <img class="dev-img" src="~/images/askiisoft.png" />
+        <img class="dev-img" src="~/images/dice.png" />
+        <img class="dev-img" src="~/images/dodge_roll.png" />
+        <img class="dev-img" src="~/images/Klei.png" height="200px"/>
+        <img class="dev-img" src="~/images/motion_twin.png" height="300px"/>
+        <img class="dev-img" src="~/images/re-logic.png" />
+    </div>
+    <div class="dev-text-button-div">
+        <div class="dev-text-div">
+            <p class="dev-text">
+                Мы — издатели видеоигр, готовые помочь вам вывести ваш проект на новый уровень! Если у вас есть амбициозная идея, уникальный концепт или игра, которой не хватает внимания, мы готовы предложить ресурсы, опыт и поддержку для её успешного запуска.
+                Мы понимаем, что каждый проект уникален, и именно поэтому готовы предложить индивидуальный подход к каждому партнёрству. Мы ищем вдохновляющих и творческих людей, которые не боятся идти в ногу с технологическими новшествами и хотят создать что-то действительно потрясающее.
+            </p>
+        </div>
+        <div class="dev-button-div">
+            <div class="send-letter-button-div" style="margin: 0px;">
+                <a asp-page="/Letter">
+                    <img class="send-letter-button-img" src="~/images/button.svg" />
+                    <p class="send-letter-text-overlay">Написать заявку</p>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

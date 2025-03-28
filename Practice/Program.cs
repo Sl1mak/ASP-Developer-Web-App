@@ -24,6 +24,7 @@ app.UseEndpoints(endpoints =>
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
     endpoints.MapRazorPages();
+    endpoints.MapControllers(); // Добавил поддержку API-контроллеров (для сохранения профиля)
 });
 
 app.Run();

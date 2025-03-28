@@ -10,20 +10,56 @@
     </div>
     <div class="inputs-div">
         <p class="profile-reg-text">Имя</p>
-        <textarea class="input-textarea"></textarea>
+        <textarea id="name" class="input-textarea"></textarea>
+
         <p class="profile-reg-text">Фамилия</p>
-        <textarea class="input-textarea"></textarea>
+        <textarea id="surname" class="input-textarea"></textarea>
+
         <p class="profile-reg-text">Почта</p>
-        <textarea class="input-textarea"></textarea>
+        <textarea id="email" class="input-textarea"></textarea>
+
         <p class="profile-reg-text">Логин</p>
-        <textarea class="input-textarea"></textarea>
+        <textarea id="login" class="input-textarea"></textarea>
+
         <p class="profile-reg-text">Пароль</p>
-        <textarea class="input-textarea"></textarea>
+        <textarea id="password" class="input-textarea"></textarea>
     </div>
     <div id="send-button" class="author-button-div">
-        <a id="send-button">
+        <a id="send-button" onclick="saveProfile()">
             <img class="send-letter-button-img" src="~/images/button.svg" />
-            <p class="send-letter-text-overlay">Отправить заявку</p>
+            <p class="send-letter-text-overlay">Авторизоваться</p>
         </a>
     </div>
 </div>
+
+<script>
+    function saveProfile() {
+        let name = document.getElementById("name").value;
+        let surname = document.getElementById("surname").value;
+        let email = document.getElementById("email").value;
+        let login = document.getElementById("login").value;
+        let password = document.getElementById("password").value;
+
+        document.getElementById("send-button").style.display = "none";
+
+        // Отправка данных в бэкенд
+        fetch('/Profile/Save', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, surname, email, login, password })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("name").outerHTML = `<p class="reg-info">${name}</p>`;
+                    document.getElementById("surname").outerHTML = `<p class="reg-info">${surname}</p>`;
+                    document.getElementById("email").outerHTML = `<p class="reg-info">${email}</p>`;
+                    document.getElementById("login").outerHTML = `<p class="reg-info">${login}</p>`;
+                    document.getElementById("password").outerHTML = `<p class="reg-info">******</p>`; // Пароль не показываем
+                }
+            })
+            .catch(error => console.error('Ошибка:', error));
+    }
+</script>
