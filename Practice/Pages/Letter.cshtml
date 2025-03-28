@@ -22,9 +22,41 @@
 
 <script>
     document.getElementById("send-button").addEventListener("click", function () {
-        document.getElementById("letter-input").style.display = "none"; // Прячем textarea
+        let letterText = document.getElementById("letter-input").value;
+
+        if (!letterText.trim()) {
+            alert('Пожалуйста, введите текст заявки.');
+            return;
+        }
+
+        // Скрываем textarea и кнопку
+        document.getElementById("letter-input").style.display = "none";
         document.getElementById("send-button").style.display = "none";
-        document.getElementById("letter-text").style.display = "block"; // Показываем текст
+        document.getElementById("letter-text").style.display = "block"; // Показываем сообщение
+
+        // Создаём объект с данными письма
+        const letter = {
+            user: 'Пользователь',  // Здесь можешь передать реального пользователя, если есть
+            text: letterText,
+            createdAt: new Date().toISOString()
+        };
+
+        // Отправка данных на бэкенд
+        fetch('/api/letter', {  // Используем /api/letter, так как это наш контроллер для отправки письма
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(letter)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("letter-text").innerText = data.message;
+                } else {
+                    alert("Ошибка: " + data.message);
+                }
+            })
+            .catch(error => console.error('Ошибка:', error));
     });
 </script>
-

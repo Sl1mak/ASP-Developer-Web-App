@@ -13,5 +13,7 @@ namespace Practice.Data
         public DbSet<Game> Games { get; set; } // Таблица для игр
 
         public DbSet<UserProfile> UserProfiles { get; set; }
+
+        public DbSet<Letter> Letters { get; set; }
     }
 }
