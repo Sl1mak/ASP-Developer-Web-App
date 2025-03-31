@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Practice.Data;  // Импортируем контекст базы данных
-using Practice.Models;  // Импортируем модель Letter
+using Practice.Data;
+using Practice.Models;
 using System.Threading.Tasks;
+using System.Linq;  // Не забудь добавить этот using для работы с LINQ
 
 namespace Practice.Controllers
 {
@@ -24,6 +25,17 @@ namespace Practice.Controllers
             if (letter == null || string.IsNullOrEmpty(letter.Text))
             {
                 return BadRequest(new { success = false, message = "Текст заявки не может быть пустым." });
+            }
+
+            // Получаем последнего зарегистрированного пользователя
+            var lastUser = _context.UserProfiles.OrderByDescending(u => u.Id).FirstOrDefault();
+            if (lastUser != null)
+            {
+                letter.User = $"{lastUser.Name} {lastUser.Surname}";  // Или укажи нужное поле
+            }
+            else
+            {
+                return BadRequest(new { success = false, message = "Нет зарегистрированных пользователей." });
             }
 
             // Устанавливаем дату создания заявки
