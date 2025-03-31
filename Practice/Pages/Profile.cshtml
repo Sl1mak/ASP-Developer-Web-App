@@ -42,7 +42,6 @@
 
         document.getElementById("send-button").style.display = "none";
 
-        // Отправка данных в бэкенд
         fetch('/Profile/Save', {
             method: 'POST',
             headers: {
@@ -50,16 +49,27 @@
             },
             body: JSON.stringify({ name, surname, email, login, password })
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка сети');
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.success) {
                     document.getElementById("name").outerHTML = `<p class="reg-info">${name}</p>`;
                     document.getElementById("surname").outerHTML = `<p class="reg-info">${surname}</p>`;
                     document.getElementById("email").outerHTML = `<p class="reg-info">${email}</p>`;
                     document.getElementById("login").outerHTML = `<p class="reg-info">${login}</p>`;
-                    document.getElementById("password").outerHTML = `<p class="reg-info">******</p>`; // Пароль не показываем
+                    document.getElementById("password").outerHTML = `<p class="reg-info">******</p>`;
+                } else {
+                    throw new Error('Ошибка сервера');
                 }
             })
-            .catch(error => console.error('Ошибка:', error));
+            .catch(error => {
+                console.error('Ошибка:', error);
+                document.getElementById("send-button").style.display = "block"; // Возвращаем кнопку
+            });
     }
+
 </script>

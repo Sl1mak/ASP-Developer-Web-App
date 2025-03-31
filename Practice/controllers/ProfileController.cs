@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Practice.Data;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Practice.Data;
 using Practice.Models;
+using System.Threading.Tasks;
 
 namespace YourNamespace.Controllers
 {
@@ -19,10 +19,26 @@ namespace YourNamespace.Controllers
         [HttpPost("Save")]
         public async Task<IActionResult> SaveProfile([FromBody] UserProfile model)
         {
-            if (model == null) return BadRequest(new { success = false });
+            if (model == null || string.IsNullOrWhiteSpace(model.Email) || string.IsNullOrWhiteSpace(model.Login))
+            {
+                return BadRequest(new { success = false, message = "Некорректные данные" });
+            }
+
+            var existingUser = await _context.UserProfiles
+                .FirstOrDefaultAsync(u => u.Email == model.Email || u.Login == model.Login);
+
+            if (existingUser != null)
+            {
+                return BadRequest(new { success = false, message = "Пользователь уже существует" });
+            }
 
             _context.UserProfiles.Add(model);
-            await _context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync();
+
+            if (result == 0)
+            {
+                return StatusCode(500, new { success = false, message = "Ошибка сохранения в БД" });
+            }
 
             return Ok(new { success = true });
         }
